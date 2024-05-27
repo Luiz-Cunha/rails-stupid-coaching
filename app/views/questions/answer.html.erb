@@ -1,0 +1,19 @@
+<div class="alert alert-info">
+<%= @questions %>
+</div>
+<p><strong>-You</strong></p>
+<hr>
+
+
+<% if @questions == 'I am going to work' %>
+  <div class="alert alert-info"><p>Great</p></div>
+  <p><strong>-Your coach</strong></p>
+<% elsif @questions.end_with?('?') %>
+  <div class="alert alert-info"><p>Silly question, get dressed and go to work!</p></div>
+  <p><strong>-Your coach</strong></p>
+<% else %>
+  <div class="alert alert-info"><p>I don't care, get dressed and go to work!</p></div>
+  <p><strong>-Your coach</strong></p>
+<% end %>
+
+<%= link_to "Ask a new question", ask_path %>
